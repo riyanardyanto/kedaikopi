@@ -113,18 +113,18 @@
           class="map"
         ></iframe>
 
-        <form action="">
+        <form method="post" name="google-sheet" action="">
           <div class="input-group">
             <i data-feather="user"></i>
-            <input type="text" placeholder="nama" />
+            <input type="text" placeholder="nama" name="nama" />
           </div>
           <div class="input-group">
             <i data-feather="mail"></i>
-            <input type="text" placeholder="email" />
+            <input type="text" placeholder="email" name="email" />
           </div>
           <div class="input-group">
             <i data-feather="phone"></i>
-            <input type="text" placeholder="no hp" />
+            <input type="text" placeholder="no hp" name="no hp" />
           </div>
           <button type="submit" class="btn">kirim pesan</button>
         </form>
@@ -158,5 +158,18 @@
 
     <!-- My Javascript -->
     <script src="js/script.js"></script>
+
+    <!-- Googlesheet -->
+    <script type="text/javascript">
+      const scriptURL = "https://script.google.com/macros/s/AKfycbw813lyYWh0FUdmmee2eU4DehPDiyLDjXVrLmHYef0Xzsio3wq8Ptw42mbTNGm8FVw/exec";
+      const form = document.forms["google-sheet"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => alert("You have successfully submitted."))
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>

@@ -23,3 +23,10 @@ form.addEventListener("submit", (e) => {
     .then((response) => alert("You have successfully submitted."))
     .catch((error) => console.error("Error!", error.message));
 });
+
+// Clear input Fields
+let btnClear = document.querySelector("button");
+let inputs = document.querySelectorAll("input");
+btnClear.addEventListener("click", () => {
+  inputs.forEach((input) => (input.value = ""));
+});

@@ -27,8 +27,8 @@ form.addEventListener("submit", (e) => {
 });
 
 // Clear input Fields
-let btnClear = document.querySelector("button");
-let inputs = document.querySelectorAll("input");
-btnClear.addEventListener("click", () => {
-  inputs.forEach((input) => (input.value = ""));
-});
+// let btnClear = document.querySelector("button");
+// let inputs = document.querySelectorAll("input");
+// btnClear.addEventListener("click", () => {
+//   inputs.forEach((input) => (input.value = ""));
+// });

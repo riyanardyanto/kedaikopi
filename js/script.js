@@ -12,3 +12,14 @@ document.addEventListener("click", function (e) {
     navbarNav.classList.remove("active");
   }
 });
+
+// Googlesheet input
+const scriptURL = "https://script.google.com/macros/s/AKfycbw813lyYWh0FUdmmee2eU4DehPDiyLDjXVrLmHYef0Xzsio3wq8Ptw42mbTNGm8FVw/exec";
+const form = document.forms["google-sheet"];
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    .then((response) => alert("You have successfully submitted."))
+    .catch((error) => console.error("Error!", error.message));
+});

@@ -23,7 +23,7 @@ form.addEventListener("submit", (e) => {
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) => alert("You have successfully submitted."))
     .catch((error) => console.error("Error!", error.message));
-  inputs.forEach((input) => (input.value = ""));
+  // inputs.forEach((input) => (input.value = ""));
 });
 
 // Clear input Fields
